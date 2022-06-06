@@ -186,7 +186,7 @@ impl TokenStream {
     }
 
     /// Get the index of the current [`char`]
-    pub fn get_index(&mut self) -> &u64 {
+    pub fn get_index(&mut self) -> &u32 {
         &self.index
     }
     
