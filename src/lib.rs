@@ -331,7 +331,7 @@ pub struct Lexer {
     input: CharStream,
     /// The output tokens to be used by
     /// the Quantii Shell Parser (Qiish-parse).
-    output: TokenStream,
+    pub output: TokenStream,
 }
 
 impl Lexer {
