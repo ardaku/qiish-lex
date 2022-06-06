@@ -185,6 +185,11 @@ impl TokenStream {
         }
     }
 
+    /// Get the index of the current [`char`]
+    pub fn get_index(&mut self) -> &u64 {
+        &self.index
+    }
+    
     /// Add a new [`Token`] to the stream.
     ///
     /// # Arguments
@@ -238,6 +243,11 @@ impl CharStream {
             chars: vec![],
             index: 0,
         }
+    }
+    
+    /// Get the index of the current [`char`]
+    pub fn get_index(&mut self) -> &u64 {
+        &self.index
     }
 
     /// Add a new [`char`] to the stream.
