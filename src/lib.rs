@@ -53,7 +53,7 @@
 
 use std::ops::Range;
 
-/// The type of a token, stored in the [`Token`] struct.
+/// The type of a token, stored in the [`Token`].
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum TokenType {
     // Redirection
@@ -167,7 +167,7 @@ impl Token {
 /// Shell Lexer (Qiish-lex) and read by the Quantii
 /// Shell Parser (Qiish-parse).
 #[derive(Debug)]
-struct TokenStream {
+pub struct TokenStream {
     /// A list of all the tokens in the stream
     tokens: Vec<Token>,
     /// The current position in the stream
@@ -222,7 +222,7 @@ impl TokenStream {
 
 /// A stream of [`char`]s.
 #[derive(Debug, Default)]
-struct CharStream {
+pub struct CharStream {
     /// A list of all the characters in the stream
     chars: Vec<char>,
     /// The current position in the stream
