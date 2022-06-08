@@ -136,6 +136,8 @@ enum TokenType {
 struct Token {
     /// The type of the token.
     ttype: TokenType,
+    /// The string contents of the token.
+    contents: String,
 }
 
 impl Token {
@@ -150,7 +152,13 @@ impl Token {
     /// returns: [`Token`]
     #[must_use]
     pub const fn new(ttype: TokenType) -> Self {
-        Self { ttype }
+        Self { ttype, contents: String::new() }
+    }
+
+    /// Create a new [`Token`] with the given [`TokenType`] and value(s).
+    #[must_use]
+    pub const fn new_with_contents(ttype: TokenType, contents: String) -> Self {
+        Self { ttype, contents }
     }
 
     /// Get the type of the current [`Token`].
@@ -582,7 +590,7 @@ impl Lexer {
                                     break;
                                 }
                             }
-                            self.output.push(Token::new(TokenType::Text));
+                            self.output.push(Token::new_with_contents(TokenType::Text, tk.clone()));
                         }
                     }
                 }
