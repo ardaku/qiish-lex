@@ -139,7 +139,7 @@ pub struct Token {
     /// The type of the token.
     ttype: TokenType,
     /// The string contents of the token.
-    contents: String,
+    pub contents: String,
 }
 
 impl Token {
